@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPOOL — YouTube Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="spool.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">VIDEO + AUDIO ARCHIVER</p>
+      <h1>SPOOL</h1>
+      <p class="subtitle">Paste one video or a complete YouTube playlist.</p>
+    </header>
+
+    <section class="card">
+      <label for="apiBase">API server</label>
+      <input id="apiBase" value="http://127.0.0.1:8000" spellcheck="false">
+      <label for="urlInput">YouTube video or playlist link</label>
+      <div class="url-row">
+        <input id="urlInput" placeholder="https://www.youtube.com/playlist?list=…" autocomplete="url">
+        <button id="loadBtn">LOAD</button>
+      </div>
+      <p class="help">Playlist downloads are saved as one ZIP file. Only download content you have permission to save.</p>
+    </section>
+
+    <p class="message error" id="errorBanner" hidden></p>
+
+    <section class="card preview" id="previewSection" hidden>
+      <span class="badge" id="contentType">VIDEO</span>
+      <h2 id="contentTitle"></h2>
+      <p id="contentMeta"></p>
+    </section>
+
+    <section class="card" id="optionsSection" hidden>
+      <div class="tabs">
+        <button class="tab active" data-tab="video">MP4 VIDEO</button>
+        <button class="tab" data-tab="audio">AUDIO</button>
+      </div>
+      <div id="videoPanel">
+        <label for="qualitySelect">Video quality</label>
+        <select id="qualitySelect"></select>
+      </div>
+      <div id="audioPanel" hidden>
+        <label for="audioFormat">Audio format</label>
+        <select id="audioFormat">
+          <option value="mp3">MP3</option><option value="m4a">M4A</option><option value="opus">Opus</option>
+          <option value="wav">WAV</option><option value="flac">FLAC</option><option value="vorbis">Vorbis</option>
+        </select>
+        <label for="audioBitrate">Bitrate</label>
+        <select id="audioBitrate">
+          <option value="320">320 kbps</option><option value="256">256 kbps</option><option value="192" selected>192 kbps</option>
+          <option value="128">128 kbps</option><option value="96">96 kbps</option>
+        </select>
+      </div>
+      <button class="download" id="downloadBtn">DOWNLOAD</button>
+    </section>
+
+    <section class="card progress" id="progressSection" hidden>
+      <div class="bar"><span id="progressBar"></span></div>
+      <p id="progressStatus">Preparing download…</p>
+    </section>
+  </main>
+  <script src="spool.js"></script>
+</body>
+</html>

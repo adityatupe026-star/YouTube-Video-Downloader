@@ -1,0 +1,41 @@
+:root { 
+    --bg:#0a0d14; 
+    --panel:#151a2a; 
+    --edge:#2b3450; 
+    --amber:#e8a33d; 
+    --text:#f3f0e8; 
+    --muted:#9ca5bc; 
+    --danger:#ff9b83; 
+}
+
+
+* { 
+    box-sizing:border-box; 
+}
+
+
+body { 
+    margin:0; 
+    min-height:100vh; 
+    color:var(--text); 
+    font-family:Manrope,sans-serif; 
+    background:radial-gradient(circle at 50% -10%,#28334b 0,transparent 38%),var(--bg); 
+}
+.brand{
+    margin: 0;
+    display: flex;
+    padding: 5px;
+    height: 40px;
+
+}
+nav ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    
+
+}
+
+
